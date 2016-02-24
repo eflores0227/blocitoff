@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     @user.password_confirmation = params[:user][:password_confirmation]
 
     if @user.save
-      flash[:notice] = "Welcome to Blocipedia #{@user.name}"
+      flash[:notice] = "Welcome to Blocitoff #{@user.name}"
       create_session(@user)
       redirect_to root path
     else
@@ -21,7 +21,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    # @user = User.find(params[:id])
+    # @user = User.find(params[:
+    @item = Item.new
   end
 
   def destroy

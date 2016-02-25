@@ -2,13 +2,11 @@ Currently Logged In User:<%= current_user.email %>
 
 
 <ul>
-  <% current_user.items.each do |i| %>
-  <li><%= i.name %></li>
-  <% end %>
+  <%= render current_user.items %>
 </ul>
 
 
-<%= form_for [current_user,@item] do |f| %>
+<%= form_for [current_user, @item] do |f| %>
   <%= f.text_field :name %>
   <%= f.submit %>
 <% end %>

@@ -7,17 +7,34 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 require "faker"
 
-5.times do
-  Item.create!(
-    name: Faker::SlackEmoji.food_and_drink
-  )
-end
+
 items = Item.all
 
 10.times do
-  User.create!(
+  u = User.create!(
   email: Faker::Internet.email,
   password: Faker::Internet.password
+  )
+
+
+  5.times do
+    Item.create!(
+      name: Faker::SlackEmoji.food_and_drink,
+      user: u
+    )
+  end
+end
+
+
+
+u = User.create!(
+email: "stef@example.com",
+password: "password"
+)
+5.times do
+  Item.create!(
+    name: Faker::SlackEmoji.food_and_drink,
+    user: u
   )
 end
 users = User.all

@@ -1,4 +1,7 @@
 <li>
   <%= item.name %>
+  <%#= distance_of_time_in_words %>
+
+  <%= distance_of_time_in_words(item.created_at, Time.now) %>
   <%= link_to "", [current_user, item], method: :delete, class: 'glyphicon glyphicon-ok' %>
 </li>

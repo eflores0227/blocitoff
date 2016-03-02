@@ -23,6 +23,8 @@ class UsersController < ApplicationController
 
   def show
     @item = Item.new
+
+    # render "/views/users/show.html.erb"
   end
 
   def destroy

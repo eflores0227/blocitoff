@@ -7,6 +7,7 @@ class ItemsController < ApplicationController
 
   def destroy
     Item.find(params[:id]).delete
+    redirect_to current_user
   end
 
 end
